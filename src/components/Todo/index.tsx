@@ -1,60 +1,61 @@
 import { MdAddCircleOutline } from 'react-icons/md'
 
 import List from './components/List'
-import { WeekDayProps } from './components/WeekDay'
+// import { WeekDayProps } from './components/WeekDay'
+import LocalStorage from '@/service/local-storage'
 
 export default function Todo() {
-  const list: WeekDayProps[] = [
-    {
-      day: 'Segunda-Feira',
-      tasks: [
-        {
-          title: 'Study Next js',
-          isChecked: false,
-        },
-      ],
-    },
-    {
-      day: 'Terça-Feira',
-      tasks: [
-        {
-          title: 'Practice Duo Lingo',
-          isChecked: false,
-        },
-      ],
-    },
-    {
-      day: 'Quarta-Feira',
-      tasks: [
-        {
-          title: 'Read a book',
-          isChecked: false,
-        },
-        {
-          title: 'Go to the Gym',
-          isChecked: false,
-        },
-      ],
-    },
-    {
-      day: 'Quinta-Feira',
-      tasks: [
-        {
-          title: 'Drink a coffee',
-          isChecked: false,
-        },
-      ],
-    },
-    {
-      day: 'Sexta-Feira',
-      tasks: [
-        {
-          title: 'drink 2L water',
-          isChecked: false,
-        },
-      ],
-    },
-  ]
+  // const list: WeekDayProps[] = [
+  //   {
+  //     day: 'Segunda-Feira',
+  //     tasks: [
+  //       {
+  //         title: 'Study Next js',
+  //         isChecked: false,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     day: 'Terça-Feira',
+  //     tasks: [
+  //       {
+  //         title: 'Practice Duo Lingo',
+  //         isChecked: false,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     day: 'Quarta-Feira',
+  //     tasks: [
+  //       {
+  //         title: 'Read a book',
+  //         isChecked: false,
+  //       },
+  //       {
+  //         title: 'Go to the Gym',
+  //         isChecked: false,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     day: 'Quinta-Feira',
+  //     tasks: [
+  //       {
+  //         title: 'Drink a coffee',
+  //         isChecked: false,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     day: 'Sexta-Feira',
+  //     tasks: [
+  //       {
+  //         title: 'drink 2L water',
+  //         isChecked: false,
+  //       },
+  //     ],
+  //   },
+  // ]
   return (
     <div className="w-full max-w-screen-xl  p-4 h-full flex flex-col gap-8 ">
       <div className="w-full flex flex-col justify-center  ">
@@ -72,7 +73,7 @@ export default function Todo() {
         </button>
       </div>
       <div className="flex flex-col w-full  flex-wrap ">
-        <List list={list} />
+        <List list={LocalStorage.getAllTasks()} />
       </div>
     </div>
   )
